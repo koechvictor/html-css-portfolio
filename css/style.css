@@ -5,11 +5,19 @@
     box-sizing: border-box;
 }
 body{
-    background: #000;
+    background-color: #000;
+}
+html{
+    scroll-behavior: smooth;
 }
 .hero{
     height: 100vh;
     width: 100%;
+    background-image: url(img/project-1.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 nav{
     display: flex;
@@ -18,7 +26,6 @@ nav{
     padding-top: 45px;
     padding-left: 8%;
     padding-right: 8%;
-    background: black;
 }
 .logo{
     color: white;
@@ -38,8 +45,14 @@ nav ul li a{
     text-decoration: none;
     font-weight: bold;
     text-transform: capitalize;
-    margin-right: 15px;
-    margin-left: 15px;
+}
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #f90000;
+    position: absolute;
+    bottom: -6px;
 }
 nav ul li a:hover{
     color: #3af900d0;
@@ -107,7 +120,7 @@ h4{
 .about{
     width: 100%;
     padding: 100px 0px;
-    background-color: #191919;
+    background-color: #000;
 }
 .newslatter form input:last-child:hover{
     background-color: rgb(97, 238, 54);
@@ -149,8 +162,8 @@ h4{
     font-size: 18px;
     margin-bottom: 45px;
 }
-button{
-    background-color: #f9004d;
+.button{
+    background-color: #2e1b21;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -165,7 +178,7 @@ button:hover{
     cursor: pointer;
 }
 .service{
-    background-color: #000;
+    background-color: black;
     width: 100%;
     padding: 100px 0px;
 }
@@ -193,13 +206,17 @@ button:hover{
     overflow: hidden;
     text-align: center;
 }
+.card:hover{
+    background-color: #f9004d;
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
 .card i{
     font-size: 50px;
     display: block;
     text-align: center;
     margin: 25px 0px;
-    color: #f9004d;
-    cursor: pointer;
+    color: #fff;
 }
 h5{
     color: white;
@@ -211,20 +228,10 @@ h5{
     line-height: 27px;
     margin-bottom: 25px;
 }
-.card .button{
-    background-color: #f9004d;
+.card .button{   
     color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 9px 22px;
-    border-radius: 30px;
-    transition: .2s;
-}
-.card .button:hover{
-    background-color: transparent;
-    border: 2px solid #f9004d;
-    cursor: pointer;
+    text-decoration: none;   
+    font-weight: bold;    
 }
 .contact-me{
     width: 100%;
@@ -304,4 +311,34 @@ footer p:nth-child(2){
     color: #977070;
     bottom: 35px;
     font-size: 18px;
+}
+.fas{
+    display: none;
+}
+
+/*--------css for small screens--------*/
+
+@media only screen and (max-width: 600px){
+    .hero{
+        background-image: url(../web_project/img/doll.jpg);
+    }
+    .hero.logo{
+        margin-top: 10px;
+    }
+    .content h4, h1, h3{
+        font-size: 30px;
+    }
+    ul li{
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f90000;
+        width: 200px;
+        height: 100vh;
+    }
+    .fas{
+        display: block;
+        color: white;
+        font-size: 25px;
+    }
 }
