@@ -177,7 +177,7 @@ button:hover{
     border: 2px solid #f9004d;
     cursor: pointer;
 }
-.service{
+#service{
     background-color: black;
     width: 100%;
     padding: 100px 0px;
